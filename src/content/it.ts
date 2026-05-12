@@ -4,10 +4,8 @@
 
 export const it = {
   studio: {
-    // TODO: Inserire il nome ufficiale dello studio
-    name: 'Studio Tributario TODO:',
-    // TODO: Inserire il nome abbreviato/logo testuale
-    shortName: 'Studio TODO:',
+    name: 'Studio Associato Consulenze Aziendali Integrate',
+    shortName: 'Studio A.C.A.I.',
     // TODO: Inserire l'anno di fondazione
     foundedYear: '1990',
     address: 'Viale Villa Heloise 21, 90100 Palermo (PA)',
@@ -86,9 +84,9 @@ export const it = {
 
   chiSiamo: {
     meta: {
-      title: 'Chi Siamo — Studio Tributario TODO:',
+      title: 'Chi Siamo — Studio A.C.A.I.',
       description:
-        'Scopri la storia, i valori e l\'approccio professionale dello Studio Tributario TODO: di Palermo.',
+        'Scopri la storia, i valori e l\'approccio professionale dello Studio A.C.A.I. di Palermo.',
     },
     title: 'Chi Siamo',
     subtitle: 'Una storia di competenza, dedizione e fiducia',
@@ -96,7 +94,7 @@ export const it = {
       title: 'La Nostra Storia',
       // TODO: Personalizzare la storia dello studio
       paragraphs: [
-        'Lo Studio Tributario TODO: nasce a Palermo nel TODO:foundedYear con l\'obiettivo di offrire una consulenza fiscale e tributaria di alto livello, capace di rispondere alle esigenze di privati, professionisti e imprese.',
+        'Lo Studio A.C.A.I. — Studio Associato Consulenze Aziendali Integrate — nasce a Palermo nel TODO:foundedYear con l\'obiettivo di offrire una consulenza fiscale e tributaria di alto livello, capace di rispondere alle esigenze di privati, professionisti e imprese.',
         'Nel corso degli anni, abbiamo costruito un rapporto di fiducia con la nostra clientela, affiancandola nelle scelte patrimoniali più rilevanti e nella gestione degli adempimenti fiscali con puntualità e precisione.',
         'Oggi il nostro studio conta un team di TODO: professionisti qualificati, operativi su tutto il territorio siciliano con base principale a Palermo.',
       ],
@@ -135,7 +133,7 @@ export const it = {
 
   servizi: {
     meta: {
-      title: 'Servizi — Studio Tributario TODO:',
+      title: 'Servizi — Studio A.C.A.I.',
       description:
         'Consulenza fiscale, tributaria, contabile e societaria a Palermo. Dichiarazioni dei redditi, IVA, assistenza imprese e molto altro.',
     },
@@ -226,9 +224,9 @@ export const it = {
 
   team: {
     meta: {
-      title: 'Il Team — Studio Tributario TODO:',
+      title: 'Il Team — Studio A.C.A.I.',
       description:
-        'Conosci i professionisti dello Studio Tributario TODO: di Palermo.',
+        'Conosci i professionisti dello Studio A.C.A.I. di Palermo.',
     },
     title: 'Il Nostro Team',
     subtitle:
@@ -264,9 +262,9 @@ export const it = {
 
   contatti: {
     meta: {
-      title: 'Contatti — Studio Tributario TODO:',
+      title: 'Contatti — Studio A.C.A.I.',
       description:
-        'Contatta lo Studio Tributario TODO: di Palermo. Viale Villa Heloise 21. Telefono, email e modulo di contatto.',
+        'Contatta lo Studio A.C.A.I. di Palermo. Viale Villa Heloise 21. Telefono, email e modulo di contatto.',
     },
     title: 'Contattaci',
     subtitle:
@@ -294,7 +292,7 @@ export const it = {
 
   faq: {
     meta: {
-      title: 'FAQ — Studio Tributario TODO:',
+      title: 'FAQ — Studio A.C.A.I.',
       description:
         'Domande frequenti su consulenza fiscale, dichiarazioni dei redditi, contenzioso tributario e servizi dello studio.',
     },
@@ -337,7 +335,7 @@ export const it = {
 
   footer: {
     tagline: 'Consulenza fiscale e tributaria professionale a Palermo.',
-    copyright: `© ${new Date().getFullYear()} Studio Tributario TODO:. Tutti i diritti riservati.`,
+    copyright: `© ${new Date().getFullYear()} Studio A.C.A.I. Tutti i diritti riservati.`,
     privacy: 'Privacy Policy',
     legal: 'Note Legali',
   },
