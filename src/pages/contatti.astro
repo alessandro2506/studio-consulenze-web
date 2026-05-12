@@ -70,22 +70,22 @@ const { info } = it.contatti;
               {info.phoneTitle}
             </h3>
             <a
-              href={`tel:${it.studio.phone.replace(/\s/g, '')}`}
+              href="tel:091303025"
               class="block text-sm font-medium hover:opacity-70 transition-opacity"
               style="color: var(--color-primary);"
             >
-              {it.studio.phone}
+              091 303025
             </a>
             <a
-              href={`tel:${it.studio.phoneMobile.replace(/\s/g, '')}`}
+              href="tel:091220679"
               class="block text-sm mt-1 hover:opacity-70 transition-opacity"
               style="color: var(--color-muted);"
             >
-              {it.studio.phoneMobile}
+              091 220679
             </a>
             <!-- Click-to-call CTA -->
             <a
-              href={`tel:${it.studio.phone.replace(/\s/g, '')}`}
+              href="tel:091303025"
               class="btn-primary mt-4 inline-flex items-center gap-2 text-sm"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,16 +132,17 @@ const { info } = it.contatti;
   <!-- Mappa -->
   <section class="bg-white pb-20 lg:pb-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="overflow-hidden border border-gray-100" style="height: 400px;">
-        <!--
-          TODO: Sostituire con le coordinate reali dello studio.
-          Per ottenere l'embed corretto:
-          1. Vai su Google Maps e cerca l'indirizzo
-          2. Clicca "Condividi" → "Incorpora una mappa"
-          3. Copia il codice <iframe> e sostituisci quello qui sotto
-        -->
+      <!--
+        TODO: Sostituire con le coordinate reali dello studio.
+        Per ottenere l'embed corretto:
+        1. Vai su Google Maps e cerca l'indirizzo
+        2. Clicca "Condividi" → "Incorpora una mappa"
+        3. Copia il codice <iframe> e sostituisci quello qui sotto
+      -->
+      <div class="relative group overflow-hidden border border-gray-100" style="height: 400px;">
+        <div class="absolute inset-0 bg-gray-300/50 pointer-events-none transition-opacity duration-300 group-hover:opacity-0 z-10"></div>
         <iframe
-          title="Mappa Studio Tributario"
+          title="Mappa Studio A.C.A.I."
           width="100%"
           height="100%"
           loading="lazy"

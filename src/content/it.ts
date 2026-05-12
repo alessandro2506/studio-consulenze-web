@@ -9,12 +9,11 @@ export const it = {
     // TODO: Inserire l'anno di fondazione
     foundedYear: '1990',
     address: 'Viale Villa Heloise 21, 90100 Palermo (PA)',
-    phone: '+39 091 000 0000',
-    // TODO: Inserire numero telefono reale
-    phoneMobile: '+39 320 000 0000',
-    email: 'info@TODO-studio.it',
-    // TODO: Inserire URL P.IVA reale
-    piva: 'TODO:00000000000',
+    phone: '091 303025 / 091 220679',
+    phoneMobile: '091 303025',
+    email: 'info@studio-acai.it',
+    // TODO: Inserire P.IVA reale
+    piva: '00000000000',
     // TODO: Inserire URL sito definitivo
     siteUrl: 'https://TODO-studio-url.it',
   },
@@ -234,27 +233,35 @@ export const it = {
     members: [
       {
         // TODO: Inserire nome e cognome
-        name: 'TODO: Nome Cognome',
+        name: 'Nome Cognome',
         // TODO: Inserire ruolo
-        role: 'TODO: Dottore Commercialista — Fondatore',
+        role: 'Dottore Commercialista — Fondatore',
         // TODO: Inserire descrizione professionale
-        bio: 'TODO: Breve descrizione professionale, specializzazioni e anni di esperienza.',
+        bio: 'Breve descrizione professionale, specializzazioni e anni di esperienza.',
         // TODO: Inserire iscrizione ordine
-        albo: 'TODO: Iscritto all\'Ordine dei Dottori Commercialisti di Palermo n. XXXX',
+        albo: 'Iscritto all\'Ordine dei Dottori Commercialisti di Palermo n. XXXX',
         photo: null,
       },
       {
-        name: 'TODO: Nome Cognome',
-        role: 'TODO: Avvocato Tributarista',
-        bio: 'TODO: Breve descrizione professionale, specializzazioni e anni di esperienza.',
-        albo: 'TODO: Iscritto all\'Ordine degli Avvocati di Palermo n. XXXX',
+        // TODO: Inserire nome e cognome
+        name: 'Nome Cognome',
+        // TODO: Inserire ruolo
+        role: 'Avvocato Tributarista',
+        // TODO: Inserire descrizione professionale
+        bio: 'Breve descrizione professionale, specializzazioni e anni di esperienza.',
+        // TODO: Inserire iscrizione ordine
+        albo: 'Iscritto all\'Ordine degli Avvocati di Palermo n. XXXX',
         photo: null,
       },
       {
-        name: 'TODO: Nome Cognome',
-        role: 'TODO: Consulente Contabile',
-        bio: 'TODO: Breve descrizione professionale, specializzazioni e anni di esperienza.',
-        albo: 'TODO: Iscritta all\'Ordine dei Consulenti del Lavoro di Palermo n. XXXX',
+        // TODO: Inserire nome e cognome
+        name: 'Nome Cognome',
+        // TODO: Inserire ruolo
+        role: 'Consulente Contabile',
+        // TODO: Inserire descrizione professionale
+        bio: 'Breve descrizione professionale, specializzazioni e anni di esperienza.',
+        // TODO: Inserire iscrizione ordine
+        albo: 'Iscritta all\'Ordine dei Consulenti del Lavoro di Palermo n. XXXX',
         photo: null,
       },
     ],
@@ -285,8 +292,7 @@ export const it = {
       phoneTitle: 'Telefono',
       emailTitle: 'Email',
       hoursTitle: 'Orari di Studio',
-      // TODO: Verificare orari di apertura
-      hours: 'Lun–Ven: 9:00–13:00 / 15:00–18:30\nSabato: su appuntamento',
+      hours: 'Lunedì – Venerdì: 9:00–13:00 / 15:00–18:30\nSabato: su appuntamento\nDomenica: chiuso',
     },
   },
 
