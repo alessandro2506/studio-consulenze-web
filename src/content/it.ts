@@ -292,7 +292,15 @@ export const it = {
       phoneTitle: 'Telefono',
       emailTitle: 'Email',
       hoursTitle: 'Orari di Studio',
-      hours: 'Lunedì – Venerdì: 9:00–13:00 / 15:00–18:30\nSabato: su appuntamento\nDomenica: chiuso',
+      hours: [
+        'Lunedì: 9:00–13:00 / 15:00–18:30',
+        'Martedì: 9:00–13:00 / 15:00–18:30',
+        'Mercoledì: 9:00–13:00 / 15:00–18:30',
+        'Giovedì: 9:00–13:00 / 15:00–18:30',
+        'Venerdì: 9:00–13:00 / 15:00–18:30',
+        'Sabato: su appuntamento',
+        'Domenica: chiuso',
+      ],
     },
   },
 

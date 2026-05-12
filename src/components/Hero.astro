@@ -48,7 +48,8 @@ const {
   </div>
 
   <div class="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 w-full">
-    <div class="max-w-3xl">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+    <div>
       <!-- Eyebrow -->
       <p
         class="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
@@ -103,6 +104,40 @@ const {
           <p class="text-xs opacity-60 text-white mt-1">Palermo, Sicilia</p>
         </div>
       </div>
+    </div>
+
+    <!-- Collage immagini — solo desktop -->
+    <div class="hidden lg:block relative h-[500px]" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80"
+        alt=""
+        class="absolute rounded-lg shadow-2xl object-cover border-2 border-white/20 w-44 h-60"
+        style="top:0; left:2rem; transform:rotate(-6deg);"
+        loading="eager"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+        alt=""
+        class="absolute rounded-lg shadow-2xl object-cover border-2 border-white/20 w-48 h-64 z-10"
+        style="top:2rem; left:10rem; transform:rotate(4deg);"
+        loading="eager"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80"
+        alt=""
+        class="absolute rounded-lg shadow-2xl object-cover border-2 border-white/20 w-44 h-56 z-20"
+        style="top:8rem; left:4rem; transform:rotate(-3deg);"
+        loading="eager"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80"
+        alt=""
+        class="absolute rounded-lg shadow-2xl object-cover border-2 border-white/20 w-40 h-52"
+        style="top:6rem; left:13rem; transform:rotate(7deg); z-index:5;"
+        loading="eager"
+      />
+    </div>
+
     </div>
   </div>
 </section>
