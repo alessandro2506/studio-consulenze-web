@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { it } from '../content/it';
+---
+
+<BaseLayout
+  title={it.servizi.meta.title}
+  description={it.servizi.meta.description}
+>
+  <!-- Page header -->
+  <section
+    class="py-20 lg:py-28"
+    style="background-color: var(--color-primary);"
+  >
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <p
+        class="text-xs font-semibold tracking-widest uppercase mb-3"
+        style="color: var(--color-accent);"
+      >
+        Cosa Offriamo
+      </p>
+      <h1
+        class="text-4xl sm:text-5xl font-bold text-white mb-4"
+        style="font-family: var(--font-heading);"
+      >
+        {it.servizi.title}
+      </h1>
+      <p class="text-lg opacity-75 text-white max-w-xl">
+        {it.servizi.subtitle}
+      </p>
+    </div>
+  </section>
+
+  <!-- Servizi grid -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          it.servizi.items.map((s) => (
+            <ServiceCard
+              icon={s.icon}
+              title={s.title}
+              description={s.description}
+              details={s.details}
+              variant="default"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section
+    class="py-20 lg:py-24"
+    style="background-color: var(--color-bg-alt);"
+  >
+    <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      <h2
+        class="text-3xl sm:text-4xl font-bold mb-4"
+        style="font-family: var(--font-heading); color: var(--color-primary);"
+      >
+        Non Trovi il Servizio che Cerchi?
+      </h2>
+      <p class="text-base mb-8 max-w-xl mx-auto" style="color: var(--color-muted);">
+        Contattaci per una consulenza preliminare gratuita. Valutiamo insieme la
+        tua situazione e ti indichiamo il percorso più adeguato.
+      </p>
+      <a href="/contatti" class="btn-primary text-sm">
+        Richiedi una Consulenza
+      </a>
+    </div>
+  </section>
+</BaseLayout>

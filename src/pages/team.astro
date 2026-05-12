@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import { it } from '../content/it';
+---
+
+<BaseLayout
+  title={it.team.meta.title}
+  description={it.team.meta.description}
+>
+  <!-- Page header -->
+  <section
+    class="py-20 lg:py-28"
+    style="background-color: var(--color-primary);"
+  >
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <p
+        class="text-xs font-semibold tracking-widest uppercase mb-3"
+        style="color: var(--color-accent);"
+      >
+        Le Persone
+      </p>
+      <h1
+        class="text-4xl sm:text-5xl font-bold text-white mb-4"
+        style="font-family: var(--font-heading);"
+      >
+        {it.team.title}
+      </h1>
+      <p class="text-lg opacity-75 text-white max-w-xl">
+        {it.team.subtitle}
+      </p>
+    </div>
+  </section>
+
+  <!-- Team grid -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {
+          it.team.members.map((member) => (
+            <TeamMember
+              name={member.name}
+              role={member.role}
+              bio={member.bio}
+              albo={member.albo}
+              photo={member.photo}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Info section -->
+  <section class="py-20 lg:py-24" style="background-color: var(--color-bg-alt);">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      <h2
+        class="text-3xl font-bold mb-4"
+        style="font-family: var(--font-heading); color: var(--color-primary);"
+      >
+        Lavora con Noi
+      </h2>
+      <p class="text-base mb-8 max-w-xl mx-auto" style="color: var(--color-muted);">
+        {/* TODO: Personalizzare il messaggio di recruiting */}
+        Siamo sempre alla ricerca di professionisti motivati e in linea con i valori del nostro studio.
+        Se sei un commercialista, avvocato tributarista o consulente del lavoro, contattaci.
+      </p>
+      <a
+        href={`mailto:${it.studio.email}?subject=Candidatura%20spontanea`}
+        class="btn-primary text-sm"
+      >
+        Invia la tua Candidatura
+      </a>
+    </div>
+  </section>
+</BaseLayout>

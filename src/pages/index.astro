@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { it } from '../content/it';
+
+const previewServizi = it.servizi.items.slice(0, 3);
+const { perchéNoi, ctaSection } = it.home;
+---
+
+<BaseLayout
+  title={`${it.studio.name} — Consulenza Fiscale e Tributaria a Palermo`}
+  description="Studio di consulenza fiscale, tributaria e contabile a Palermo. Dichiarazioni dei redditi, contenzioso tributario, assistenza imprese. Viale Villa Heloise 21."
+>
+  <!-- Hero -->
+  <Hero />
+
+  <!-- Servizi preview -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mb-12">
+        <p
+          class="text-xs font-semibold tracking-widest uppercase mb-3"
+          style="color: var(--color-accent);"
+        >
+          Cosa Facciamo
+        </p>
+        <h2 class="section-title">{it.home.serviziTitle}</h2>
+        <div class="section-divider"></div>
+        <p class="text-base max-w-xl" style="color: var(--color-muted);">
+          {it.home.serviziSubtitle}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          previewServizi.map((s) => (
+            <ServiceCard
+              icon={s.icon}
+              title={s.title}
+              description={s.description}
+              href="/servizi"
+              variant="compact"
+            />
+          ))
+        }
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/servizi" class="btn-outline text-sm">
+          Tutti i Servizi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perché noi -->
+  <section class="py-20 lg:py-28" style="background-color: var(--color-bg-alt);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p
+          class="text-xs font-semibold tracking-widest uppercase mb-3"
+          style="color: var(--color-accent);"
+        >
+          I Nostri Punti di Forza
+        </p>
+        <h2 class="section-title">{perchéNoi.title}</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="text-base max-w-xl mx-auto" style="color: var(--color-muted);">
+          {perchéNoi.subtitle}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          perchéNoi.values.map((v) => (
+            <div class="card text-center p-7">
+              <div
+                class="text-3xl mb-4 mx-auto w-14 h-14 flex items-center justify-center rounded-full"
+                style="background-color: var(--color-primary); opacity: 0.9;"
+                aria-hidden="true"
+              >
+                {v.icon}
+              </div>
+              <h3
+                class="text-base font-semibold mb-2"
+                style="font-family: var(--font-heading); color: var(--color-primary);"
+              >
+                {v.title}
+              </h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-muted);">
+                {v.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section
+    class="py-20 lg:py-24 text-white"
+    style="background-color: var(--color-primary);"
+  >
+    <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      <h2
+        class="text-3xl sm:text-4xl font-bold mb-4"
+        style="font-family: var(--font-heading);"
+      >
+        {ctaSection.title}
+      </h2>
+      <p class="text-base opacity-75 mb-8 max-w-xl mx-auto">
+        {ctaSection.subtitle}
+      </p>
+      <a href="/contatti" class="btn-primary text-sm">
+        {ctaSection.cta}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

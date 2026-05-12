@@ -1,0 +1,63 @@
+---
+export interface Props {
+  question: string;
+  answer: string;
+  index: number;
+}
+
+const { question, answer, index } = Astro.props;
+const id = `faq-${index}`;
+---
+
+<div class="border-b border-gray-100 last:border-0">
+  <button
+    class="w-full flex items-start justify-between gap-4 py-5 text-left group"
+    aria-expanded="false"
+    aria-controls={id}
+    data-faq-toggle
+  >
+    <span
+      class="text-base font-medium leading-snug group-hover:opacity-70 transition-opacity"
+      style="font-family: var(--font-heading); color: var(--color-primary);"
+    >
+      {question}
+    </span>
+    <span
+      class="shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-200"
+      style="color: var(--color-accent);"
+      aria-hidden="true"
+      data-faq-icon
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+    </span>
+  </button>
+
+  <div
+    id={id}
+    class="hidden pb-5"
+    data-faq-panel
+  >
+    <p class="text-sm leading-relaxed" style="color: var(--color-muted);">
+      {answer}
+    </p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const panel = btn.nextElementSibling as HTMLElement | null;
+      const icon = btn.querySelector('[data-faq-icon]') as HTMLElement | null;
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+      panel?.classList.toggle('hidden', expanded);
+
+      if (icon) {
+        icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(45deg)';
+      }
+    });
+  });
+</script>

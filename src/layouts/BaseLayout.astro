@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { it } from '../content/it';
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-default.jpg',
+  canonical,
+} = Astro.props;
+
+const siteUrl = it.studio.siteUrl;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LegalService',
+  name: it.studio.name,
+  description: 'Consulenza fiscale, tributaria e contabile a Palermo.',
+  url: siteUrl,
+  telephone: it.studio.phone,
+  email: it.studio.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Viale Villa Heloise 21',
+    addressLocality: 'Palermo',
+    addressRegion: 'PA',
+    postalCode: '90100',
+    addressCountry: 'IT',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    // TODO: Aggiornare con coordinate reali
+    latitude: 38.115688,
+    longitude: 13.361267,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:30',
+    },
+  ],
+  priceRange: '€€',
+  areaServed: {
+    '@type': 'City',
+    name: 'Palermo',
+  },
+};
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content={it.studio.name} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Extra head slot for page-specific meta/scripts -->
+    <slot name="head" />
+  </head>
+  <body class="flex flex-col min-h-screen" style="color: var(--color-text);">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
